@@ -4,6 +4,7 @@ from js import THREE, window, document, Object, console
 from pyodide.ffi import create_proxy, to_js
 # Import python module
 import math
+import random
 
 #-----------------------------------------------------------------------
 # USE THIS FUNCTION TO WRITE THE MAIN PROGRAM
@@ -98,10 +99,13 @@ def generate():
             dir_vec_1_2 = temp4_vec.setLength(dir_vec_l/2)
             dir_x = dir_vec.getComponent(0)
             dir_y = dir_vec.getComponent(1)
-            if dir_y != 0 and dir_x != 0:
-                orth_vec = THREE.Vector3.new(dir_x,(-dir_x*dir_x)/dir_y,0)
+            
+            randomnumb = random.randint(0,1)
+            if randomnumb == 0:
+                orth_vec = THREE.Vector3.new(-dir_y,dir_x,0)
             else:
-                orth_vec = THREE.Vector3.new(dir_y,dir_x,0)
+                orth_vec = THREE.Vector3.new(-dir_x,dir_y,0)
+                
             orth_vec.setLength((dir_vec_1_3_l/2)*1.73205)
             #Generate final points for new geometry
             mid_p_vec = THREE.Vector3.new(0,0,0).addVectors(dir_vec_1_2,orth_vec)
@@ -128,10 +132,13 @@ def generate():
             dir_vec_1_2 = temp4_vec.setLength(dir_vec_l/2)
             dir_x = dir_vec.getComponent(0)
             dir_y = dir_vec.getComponent(1)
-            if dir_y != 0 and dir_x != 0:
-                orth_vec = THREE.Vector3.new(dir_x,(-dir_x*dir_x)/dir_y,0)
+            
+            randomnumb = random.randint(0,1)
+            if randomnumb == 0:
+                orth_vec = THREE.Vector3.new(-dir_y,dir_x,0)
             else:
-                orth_vec = THREE.Vector3.new(dir_y,dir_x,0)
+                orth_vec = THREE.Vector3.new(-dir_x,dir_y,0)
+                
             orth_vec.setLength((dir_vec_1_3_l/2)*1.73205)
             #Generate final points for new geometry
             mid_p_vec = THREE.Vector3.new(0,0,0).addVectors(dir_vec_1_2,orth_vec)
