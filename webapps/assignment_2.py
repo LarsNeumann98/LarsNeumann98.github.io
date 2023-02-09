@@ -104,7 +104,7 @@ def generate():
             if randomnumb == 0:
                 orth_vec = THREE.Vector3.new(-dir_y,dir_x,0)
             else:
-                orth_vec = THREE.Vector3.new(-dir_x,dir_y,0)
+                orth_vec = THREE.Vector3.new(dir_y,-dir_x,0)
                 
             orth_vec.setLength((dir_vec_1_3_l/2)*1.73205)
             #Generate final points for new geometry
@@ -137,7 +137,7 @@ def generate():
             if randomnumb == 0:
                 orth_vec = THREE.Vector3.new(-dir_y,dir_x,0)
             else:
-                orth_vec = THREE.Vector3.new(-dir_x,dir_y,0)
+                orth_vec = THREE.Vector3.new(dir_y,-dir_x,0)
                 
             orth_vec.setLength((dir_vec_1_3_l/2)*1.73205)
             #Generate final points for new geometry
